@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kruthak Technology - Pioneering AI Edge Innovation</title>
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo-color.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo-color.ico" type="image/x-icon">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter, Space Mono & Bagel Fat One -->
+    <link href="images/IMG4542_0125.jpg" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #05cbaa; /* Light gray background for body */
+        }
+        h1, h2, h3 {
+            font-family: 'Inter', sans-serif;
+        }
+        .custom-bg {
+            /* Defines the background image for the entire content area */
+            /* REPLACE THIS URL with your desired background image URL or relative path */
+            background-image: url('images/IMG4542_0125.jpg'); /* Example: A tech-related background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Fixed background creates a parallax-like effect */
+            position: relative;
+            min-height: 100vh;
+        }
+        .bg-overlay {
+            /* Dark overlay to ensure text readability on top of the background image */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7); /* Slightly darker overlay for better contrast */
+            z-index: 1;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 2; /* Ensures content is above the overlay */
+        }
+        /* Custom styles for headings and text colors */
+        h1 {
+            color: #FFFFFF; /* White for hero text */
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6); /* Stronger shadow for hero text */
+            font-family: 'Bagel Fat One', cursive; /* Apply Bagel Fat One font */
+            font-size: 5rem; /* Default large size for h1 */
+            letter-spacing: 0.05em; /* Add slight letter spacing */
+            text-transform: uppercase; /* Uppercase for professionalism */
+        }
+        h2, h3 {
+            color: #1E40AF; /* A strong blue for main headings */
+        }
+        .text-gray-800 {
+            color: #374151; /* Darker gray for body text */
+        }
+        .text-indigo-700 {
+            color: #4338CA; /* Deeper indigo for brand accents */
+        }
+
+        /* Ensure the hero section takes up the full viewport height below the nav */
+        .hero-full-height {
+            min-height: calc(100vh - 80px); /* Subtract approximate nav height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem; /* Add some padding for content */
+        }
+
+        /* Typing Motto Animation Styles */
+        .typing-motto-container {
+            min-height: 60px; /* Ensure space for the motto text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Hide overflow during typing/deleting */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for typed text */
+        }
+
+        .animated-motto-text {
+            display: inline-block; /* Allows cursor to be next to text */
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Hide text that overflows during typing */
+            border-right: .15em solid #FFD700; /* Blinking cursor, now a golden color */
+            font-size: 1.8rem; /* Slightly larger default font size */
+            font-family: 'Space Mono', monospace; /* Monospaced font for coding style */
+            color: #FFD700; /* Golden color for typing effect */
+            font-weight: 700; /* Bold for stronger presence */
+            transition: border-color 0.1s ease-in-out; /* Smooth transition for cursor */
+        }
+
+        /* Remove border-right when not typing/deleting for a cleaner look */
+        .animated-motto-text.no-cursor {
+            border-right: none;
+        }
+
+        /* Popping Slogan Animation Styles */
+        @keyframes pop-in-out {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) translateY(20px);
+            }
+            10% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+            80% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.8) translateY(-20px);
+            }
+        }
+
+        .popping-slogan-animation {
+            animation: pop-in-out 4s ease-in-out infinite; /* Adjust duration and timing as needed */
+        }
+
+        .slogan-container {
+            min-height: 60px; /* Ensure space for the slogan text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Hide overflow during animation */
+        }
+
+        /* Adjust font sizes for responsiveness */
+        .hero-text {
+            font-size: 1.5rem; /* Default font size for popping slogan */
+            color: #87CEEB; /* Sky blue for the slogan */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for text */
+            font-family: 'Inter', sans-serif; /* Default Inter font for the slogan */
+            font-weight: 600; /* Semi-bold for emphasis */
+            font-style: normal; /* Ensure no italics if that's not desired */
+        }
+        @media (min-width: 640px) { /* Small screens */
+            h1 { font-size: 4rem; }
+        }
+        @media (min-width: 768px) {
+            h1 { font-size: 6rem; } /* Larger for medium screens */
+            .hero-text {
+                font-size: 2.2rem; /* Larger for medium screens */
+            }
+            .animated-motto-text {
+                font-size: 2.5rem; /* Larger for medium screens */
+            }
+        }
+        @media (min-width: 1024px) {
+            h1 { font-size: 8rem; } /* Even larger for large screens */
+            .hero-text {
+                font-size: 3rem; /* Even larger for large screens */
+            }
+            .animated-motto-text {
+                font-size: 3.5rem; /* Even larger for large screens */
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="custom-bg">
+        <div class="bg-overlay"></div>
+        <div class="content-wrapper">
+            <!-- Navigation Bar -->
+            <nav class="bg-blue-100 bg-opacity-95 shadow-lg p-4 sticky top-0 z-50 rounded-b-xl">
+                <div class="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center space-x-3">
+                        <!-- Logo Placeholder with improved styling and fallback -->
+                        <!-- REPLACE THIS URL with your desired logo image URL or relative path -->
+                        <img id="logo-image" src="images/logo-color.png" alt="Kruthak Technology Logo" class="h-12 w-12 rounded-full shadow-md transition-transform transform hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/60x60/CCCCCC/000000?text=Logo'">
+                        <a href="#" class="text-2xl font-bold text-indigo-800 tracking-wide hover:text-indigo-900 transition-colors duration-300">Kruthak Technology</a>
+                    </div>
+                    <!-- Navigation links -->
+                    <div class="hidden md:flex space-x-6">
+                        <a href="#about" class="text-gray-700 hover:text-indigo-700 font-medium transition-colors duration-300">About Us</a>
+                        <a href="#mission" class="text-gray-700 hover:text-indigo-700 font-medium transition-colors duration-300">Mission</a>
+                        <a href="#vision" class="text-gray-700 hover:text-indigo-700 font-medium transition-colors duration-300">Vision</a>
+                        <a href="#what-we-do" class="text-gray-700 hover:text-indigo-700 font-medium transition-colors duration-300">What We Do</a>
+                        <a href="#contact" class="text-gray-700 hover:text-indigo-700 font-medium transition-colors duration-300">Contact</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero Section -->
+            <header class="text-center text-white relative hero-full-height">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight drop-shadow-xl animate-fade-in-down">
+                        Kruthak Technology
+                    </h1>
+                    <!-- Typing Motto Line (coding style) -->
+                    <div class="typing-motto-container mb-4">
+                        <p id="animated-motto" class="animated-motto-text"></p>
+                    </div>
+                    <!-- Popping Slogan Line -->
+                    <div class="slogan-container">
+                        <p id="popping-slogan" class="hero-text"></p>
+                    </div>
+                </div>
+            </header>
+
+            <main class="container mx-auto p-4 sm:p-6 lg:p-8 space-y-16">
+
+                <!-- About Section -->
+                <section id="about" class="bg-white bg-opacity-95 p-8 md:p-12 rounded-3xl shadow-2xl border border-blue-100 transform transition-transform hover:scale-[1.005] duration-300">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10 border-b-4 border-indigo-400 pb-4 text-indigo-800">About Kruthak</h2>
+
+                    <!-- Section 1: The Name "Kruthak" (Image Right) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
+                        <div class="flex flex-col space-y-5 text-lg">
+                            <h3 class="text-2xl md:text-3xl font-bold text-indigo-700">The Power of "Kruthak"</h3>
+                            <p class="leading-relaxed text-gray-700 text-justify">
+                                "Kruthak," from Sanskrit, signifies <strong>accomplishment</strong> and <strong>purposeful creation</strong>. This name perfectly encapsulates our drive to build groundbreaking solutions and achieve technological mastery. Our commitment is to deliver precision-engineered products that make a tangible difference.
+                            </p>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <!-- Image 1 for About Section -->
+                            <!-- REPLACE THIS URL with your desired image URL or relative path -->
+                            <img src="images/Gemini_Generated_Image_7gl0607gl0607gl0.png" alt="Purposeful Creation" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Our Core Focus (Image Left) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
+                        <div class="flex justify-center items-center md:order-first">
+                            <!-- Image 2 for About Section -->
+                            <!-- REPLACE THIS URL with your desired image URL or relative path -->
+                            <img src="images/Gemini_Generated_Image_435rlb435rlb435r.png" alt="AI Edge Pioneers" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
+                        </div>
+                        <div class="flex flex-col space-y-5 text-lg md:order-last">
+                           <h3 class="text-2xl md:text-3xl font-bold text-indigo-700">Leading AI Edge Innovation</h3>
+                           <p class="leading-relaxed text-gray-700 text-justify">
+                               Kruthak Technology stands at the <strong>forefront of AI edge solutions</strong>, expertly blending mechanical engineering with cutting-edge artificial intelligence. We design, develop, and deploy high-performance, AI-powered products across diverse sectors, from agriculture to consumer markets, ensuring robust and intelligent performance.
+                           </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Our Impact (Image Right) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                        <div class="flex flex-col space-y-5 text-lg">
+                            <h3 class="text-2xl md:text-3xl font-bold text-indigo-700">Delivering Tangible Impact</h3>
+                            <p class="leading-relaxed text-gray-700 text-justify">
+                                Our relentless innovation is dedicated to <strong>transforming India's AI ecosystem</strong>. We craft solutions that not only push technological boundaries but also deliver tangible, real-world impact and unparalleled efficiency, enhancing productivity and well-being across industries.
+                            </p>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <!-- Image 3 for About Section -->
+                            <!-- REPLACE THIS URL with your desired image URL or relative path -->
+                            <img src="images/Gemini_Generated_Image_23aywe23aywe23ay.png" alt="Real World Impact" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Mission Section (Image Left) -->
+                <section id="mission" class="bg-white bg-opacity-95 p-8 md:p-12 rounded-3xl shadow-2xl border border-blue-100 transform transition-transform hover:scale-[1.005] duration-300">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-10 border-b-4 border-indigo-400 pb-4 text-center text-indigo-800">Our Driving Mission</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                        <div class="flex justify-center items-center md:order-first">
+                            <!-- REPLACE THIS URL with your desired image URL or relative path -->
+                            <img src="images/Gemini_Generated_Image_e09hfoe09hfoe09h.png" alt="Mission - Bridging Innovation" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
+                        </div>
+                        <p class="leading-relaxed text-gray-700 text-lg text-justify">
+                            Our mission is crystal clear: to <strong>revolutionize the AI edge landscape in India</strong>. We achieve this by seamlessly bridging mechanical engineering expertise with groundbreaking AI innovation, delivering advanced, robust products that solve critical problems with engineering precision and technological brilliance, driving efficiency and progress.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Vision Section (Image Right) -->
+                <section id="vision" class="bg-white bg-opacity-95 p-8 md:p-12 rounded-3xl shadow-2xl border border-blue-100 transform transition-transform hover:scale-[1.005] duration-300">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-10 border-b-4 border-indigo-400 pb-4 text-center text-indigo-800">Our Inspiring Vision</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                        <p class="leading-relaxed text-gray-700 text-lg text-justify">
+                            We envision a future where AI is <strong>seamlessly integrated</strong> into every industry and daily life, encompassing sectors from agriculture and industrial operations to <strong>consumer electronics</strong> and <strong>other cutting-edge products</strong>. Through precision engineering and breakthrough AI, we are leading the charge in developing solutions that dramatically <strong>boost productivity, optimize efficiency, and elevate well-being</strong>—transforming experiences from factory floors to farm fields, and into the very products you use every day.
+                        </p>
+                        <div class="flex justify-center items-center">
+                            <!-- REPLACE THIS URL with your desired image URL or relative path -->
+                            <img src="images/Gemini_Generated_Image_17qtpr17qtpr17qt.png" alt="Vision - Future of AI" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- What We Do Section (Image Left) -->
+                <section id="what-we-do" class="bg-white bg-opacity-95 p-8 md:p-12 rounded-3xl shadow-2xl border border-blue-100 transform transition-transform hover:scale-[1.005] duration-300">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-10 border-b-4 border-indigo-400 pb-4 text-center text-indigo-800">What Defines Our Work</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                        <div class="flex justify-center items-center md:order-first">
+                            <!-- REPLACE THIS URL with your desired image URL or relative path -->
+                            <img src="images/Gemini_Generated_Image_vwhihyvwhihyvwhi.png" alt="What We Do - End to End Solutions" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
+                        </div>
+                        <p class="leading-relaxed text-gray-700 text-lg text-justify">
+                            Kruthak Technology designs <strong>end-to-end AI edge solutions</strong> that harness both mechanical engineering principles and advanced AI. Our products are meticulously engineered to deliver <strong>unmatched reliability and precision</strong>, empowering industries—from cool consumer gadgets to massive agricultural operations—to supercharge their efficiency and achieve unparalleled success!
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Contact Info and Office Address Section -->
+                <section id="contact" class="bg-white bg-opacity-95 p-8 md:p-12 rounded-3xl shadow-2xl border border-blue-100 mt-12 transform transition-transform hover:scale-[1.005] duration-300">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10 border-b-4 border-indigo-400 pb-4 text-indigo-800">Connect with Kruthak</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+                        <!-- Contact Information -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-indigo-700 mb-5">Contact Information</h3>
+                            <p class="mb-3 text-gray-700 text-lg text-justify"><strong>Email:</strong> <a href="mailto:chinmayabhat.kruthak@gmail.com" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-300">chinmayabhat.kruthak@gmail.com</a></p>
+                            <p class="mb-3 text-gray-700 text-lg text-justify"><strong>Phone:</strong> +91 </p>
+                            <p class="text-gray-700 text-lg text-justify"><strong>General Inquiries:</strong> Reach out to us for partnerships, innovative solutions, and any other inquiries you may have. We're here to help you achieve your technological goals.</p>
+                        </div>
+
+                        <!-- Office Address -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-indigo-700 mb-5">Our Location</h3>
+                            <address class="not-italic text-gray-700 text-lg leading-relaxed text-justify">
+                                Kruthak Technology Pvt. Ltd.<br>
+                                #338,1stFloor<br>
+                                9th Main Road, 14 cross Road<br>
+                                Indiranagar 2nd stage<br>
+                                Bengaluru, Karnataka 560038,<br>
+                                India
+                            </address>
+                            <!-- <div class="mt-6">
+                                <a href="" target="_blank" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                    View on Map
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- Footer -->
+            <footer class="bg-gray-900 bg-opacity-95 text-white py-8 mt-16 rounded-t-xl">
+                <div class="container mx-auto text-center px-4 sm:px-6 lg:px-8">
+                    <p class="text-lg">© 2025 Kruthak Technology. All rights reserved.</p>
+                    <!-- <div class="flex justify-center space-x-6 mt-4">
+                        <!-- Social Media Icons (placeholders) 
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-2 16H8V8h2v8zm4 0h-2V8h2v8zm-1-8a1 1 0 100-2 1 1 0 000 2z"></path></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-3 10a3 3 0 100 6 3 3 0 000-6zm6 0a3 3 0 100 6 3 3 0 000-6zm-3 8a5 5 0 110-10 5 5 0 010 10z"></path></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-5 17h2V7H7v10zm6 0h2V7h-2v10z"></path></svg></a>
+                    </div> -->
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Typing Motto Animation Script
+        const mottoElement = document.getElementById('animated-motto');
+        const mottoText = 'Innovate. Achieve. Elevate.';
+        let mottoCharIndex = 0;
+        let isMottoDeleting = false;
+        const mottoTypingSpeed = 80; // milliseconds per character
+        const mottoDeletingSpeed = 40; // milliseconds per character
+        const mottoPauseAtEnd = 1500; // milliseconds to pause after typing a phrase
+
+        function typeMotto() {
+            if (isMottoDeleting) {
+                mottoElement.textContent = mottoText.substring(0, mottoCharIndex--);
+                if (mottoCharIndex < 0) {
+                    isMottoDeleting = false;
+                    mottoCharIndex = 0;
+                    mottoElement.textContent = ''; // Clear the text before restarting
+                    mottoElement.classList.add('no-cursor');
+                    setTimeout(typeMotto, mottoTypingSpeed); // Restart typing
+                    return;
+                }
+            } else {
+                mottoElement.textContent = mottoText.substring(0, mottoCharIndex++);
+                if (mottoCharIndex > mottoText.length) {
+                    isMottoDeleting = true;
+                    mottoElement.classList.add('no-cursor');
+                    setTimeout(typeMotto, mottoPauseAtEnd); // Pause before deleting
+                    return;
+                }
+            }
+
+            mottoElement.classList.remove('no-cursor'); // Ensure cursor is visible during typing/deleting
+            let delay = isMottoDeleting ? mottoDeletingSpeed : mottoTypingSpeed;
+            setTimeout(typeMotto, delay);
+        }
+
+        // Popping Slogan Animation Script
+        const sloganElement = document.getElementById('popping-slogan');
+        const sloganText = 'Pioneering AI Edge Innovation for a Smarter, Connected Future.';
+
+        function startSloganAnimation() {
+            sloganElement.textContent = sloganText;
+            sloganElement.classList.add('popping-slogan-animation');
+        }
+
+        // Initialize both animations when the DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            mottoElement.textContent = ''; // Ensure motto is empty initially
+            mottoElement.classList.add('no-cursor'); // Hide cursor initially for motto
+            typeMotto(); // Start motto typing
+            startSloganAnimation(); // Start slogan popping
+        });
+    </script>
+</body>
+</html>
