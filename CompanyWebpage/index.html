@@ -10,7 +10,10 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter, Space Mono & Bagel Fat One -->
-    <link href="images/IMG4542_0125.jpg" rel="stylesheet">
+    <!-- Corrected Google Fonts import: Ensure all fonts are loaded for proper display across devices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Inter:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -22,7 +25,7 @@
         .custom-bg {
             /* Defines the background image for the entire content area */
             /* REPLACE THIS URL with your desired background image URL or relative path */
-            background-image: url('images/IMG4542_0125.jpg'); /* Example: A tech-related background */
+            background-image: url('https://placehold.co/1920x1080/CCCCCC/000000?text=Background+Image'); /* Example: A tech-related background */
             background-size: cover;
             background-position: center;
             background-attachment: fixed; /* Fixed background creates a parallax-like effect */
@@ -141,24 +144,18 @@
         }
         @media (min-width: 640px) { /* Small screens */
             h1 { font-size: 4rem; }
+            .animated-motto-text { font-size: 2rem; }
+            .hero-text { font-size: 1.8rem; }
         }
         @media (min-width: 768px) {
             h1 { font-size: 6rem; } /* Larger for medium screens */
-            .hero-text {
-                font-size: 2.2rem; /* Larger for medium screens */
-            }
-            .animated-motto-text {
-                font-size: 2.5rem; /* Larger for medium screens */
-            }
+            .animated-motto-text { font-size: 2.5rem; }
+            .hero-text { font-size: 2.2rem; } /* Larger for medium screens */
         }
         @media (min-width: 1024px) {
             h1 { font-size: 8rem; } /* Even larger for large screens */
-            .hero-text {
-                font-size: 3rem; /* Even larger for large screens */
-            }
-            .animated-motto-text {
-                font-size: 3.5rem; /* Even larger for large screens */
-            }
+            .animated-motto-text { font-size: 3.5rem; }
+            .hero-text { font-size: 3rem; } /* Even larger for large screens */
         }
     </style>
 </head>
@@ -173,7 +170,7 @@
                     <div class="flex items-center space-x-3">
                         <!-- Logo Placeholder with improved styling and fallback -->
                         <!-- REPLACE THIS URL with your desired logo image URL or relative path -->
-                        <img id="logo-image" src="images/logo-color.png" alt="Kruthak Technology Logo" class="h-12 w-12 rounded-full shadow-md transition-transform transform hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/60x60/CCCCCC/000000?text=Logo'">
+                        <img id="logo-image" src="https://placehold.co/60x60/CCCCCC/000000?text=Logo" alt="Kruthak Technology Logo" class="h-12 w-12 rounded-full shadow-md transition-transform transform hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/60x60/CCCCCC/000000?text=Logo'">
                         <a href="#" class="text-2xl font-bold text-indigo-800 tracking-wide hover:text-indigo-900 transition-colors duration-300">Kruthak Technology</a>
                     </div>
                     <!-- Navigation links -->
@@ -204,6 +201,7 @@
                 </div>
             </header>
 
+            <!-- Main Content Area - Uses container for central alignment and consistent padding -->
             <main class="container mx-auto p-4 sm:p-6 lg:p-8 space-y-16">
 
                 <!-- About Section -->
@@ -211,6 +209,7 @@
                     <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10 border-b-4 border-indigo-400 pb-4 text-indigo-800">About Kruthak</h2>
 
                     <!-- Section 1: The Name "Kruthak" (Image Right) -->
+                    <!-- Uses a grid for two-column layout on medium screens and above, single column on small screens -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
                         <div class="flex flex-col space-y-5 text-lg">
                             <h3 class="text-2xl md:text-3xl font-bold text-indigo-700">The Power of "Kruthak"</h3>
@@ -219,18 +218,17 @@
                             </p>
                         </div>
                         <div class="flex justify-center items-center">
-                            <!-- Image 1 for About Section -->
-                            <!-- REPLACE THIS URL with your desired image URL or relative path -->
-                            <img src="images/Gemini_Generated_Image_7gl0607gl0607gl0.png" alt="Purposeful Creation" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
+                            <!-- Image 1 for About Section with responsive sizing and fallback -->
+                            <img src="https://placehold.co/500x300/CCCCCC/000000?text=Purposeful+Creation" alt="Purposeful Creation" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
                         </div>
                     </div>
 
                     <!-- Section 2: Our Core Focus (Image Left) -->
+                    <!-- md:order-first and md:order-last control column order on medium screens -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
                         <div class="flex justify-center items-center md:order-first">
-                            <!-- Image 2 for About Section -->
-                            <!-- REPLACE THIS URL with your desired image URL or relative path -->
-                            <img src="images/Gemini_Generated_Image_435rlb435rlb435r.png" alt="AI Edge Pioneers" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
+                            <!-- Image 2 for About Section with responsive sizing and fallback -->
+                            <img src="https://placehold.co/500x300/CCCCCC/000000?text=AI+Edge+Pioneers" alt="AI Edge Pioneers" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
                         </div>
                         <div class="flex flex-col space-y-5 text-lg md:order-last">
                            <h3 class="text-2xl md:text-3xl font-bold text-indigo-700">Leading AI Edge Innovation</h3>
@@ -249,9 +247,8 @@
                             </p>
                         </div>
                         <div class="flex justify-center items-center">
-                            <!-- Image 3 for About Section -->
-                            <!-- REPLACE THIS URL with your desired image URL or relative path -->
-                            <img src="images/Gemini_Generated_Image_23aywe23aywe23ay.png" alt="Real World Impact" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
+                            <!-- Image 3 for About Section with responsive sizing and fallback -->
+                            <img src="https://placehold.co/500x300/CCCCCC/000000?text=Real+World+Impact" alt="Real World Impact" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
                         </div>
                     </div>
                 </section>
@@ -261,10 +258,10 @@
                     <h2 class="text-3xl md:text-4xl font-extrabold mb-10 border-b-4 border-indigo-400 pb-4 text-center text-indigo-800">Our Driving Mission</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                         <div class="flex justify-center items-center md:order-first">
-                            <!-- REPLACE THIS URL with your desired image URL or relative path -->
-                            <img src="images/Gemini_Generated_Image_e09hfoe09hfoe09h.png" alt="Mission - Bridging Innovation" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
+                            <!-- Image for Mission Section with responsive sizing and fallback -->
+                            <img src="https://placehold.co/500x300/CCCCCC/000000?text=Mission+Innovation" alt="Mission - Bridging Innovation" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
                         </div>
-                        <p class="leading-relaxed text-gray-700 text-lg text-justify">
+                        <p class="leading-relaxed text-gray-700 text-lg text-justify md:order-last">
                             Our mission is crystal clear: to <strong>revolutionize the AI edge landscape in India</strong>. We achieve this by seamlessly bridging mechanical engineering expertise with groundbreaking AI innovation, delivering advanced, robust products that solve critical problems with engineering precision and technological brilliance, driving efficiency and progress.
                         </p>
                     </div>
@@ -278,8 +275,8 @@
                             We envision a future where AI is <strong>seamlessly integrated</strong> into every industry and daily life, encompassing sectors from agriculture and industrial operations to <strong>consumer electronics</strong> and <strong>other cutting-edge products</strong>. Through precision engineering and breakthrough AI, we are leading the charge in developing solutions that dramatically <strong>boost productivity, optimize efficiency, and elevate well-being</strong>—transforming experiences from factory floors to farm fields, and into the very products you use every day.
                         </p>
                         <div class="flex justify-center items-center">
-                            <!-- REPLACE THIS URL with your desired image URL or relative path -->
-                            <img src="images/Gemini_Generated_Image_17qtpr17qtpr17qt.png" alt="Vision - Future of AI" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
+                            <!-- Image for Vision Section with responsive sizing and fallback -->
+                            <img src="https://placehold.co/500x300/CCCCCC/000000?text=Future+of+AI" alt="Vision - Future of AI" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
                         </div>
                     </div>
                 </section>
@@ -289,10 +286,10 @@
                     <h2 class="text-3xl md:text-4xl font-extrabold mb-10 border-b-4 border-indigo-400 pb-4 text-center text-indigo-800">What Defines Our Work</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                         <div class="flex justify-center items-center md:order-first">
-                            <!-- REPLACE THIS URL with your desired image URL or relative path -->
-                            <img src="images/Gemini_Generated_Image_vwhihyvwhihyvwhi.png" alt="What We Do - End to End Solutions" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
+                            <!-- Image for What We Do Section with responsive sizing and fallback -->
+                            <img src="https://placehold.co/500x300/CCCCCC/000000?text=End-to-End+Solutions" alt="What We Do - End to End Solutions" class="rounded-2xl shadow-xl w-full h-auto object-cover max-w-full transition-transform transform hover:scale-105 duration-300" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Error'">
                         </div>
-                        <p class="leading-relaxed text-gray-700 text-lg text-justify">
+                        <p class="leading-relaxed text-gray-700 text-lg text-justify md:order-last">
                             Kruthak Technology designs <strong>end-to-end AI edge solutions</strong> that harness both mechanical engineering principles and advanced AI. Our products are meticulously engineered to deliver <strong>unmatched reliability and precision</strong>, empowering industries—from cool consumer gadgets to massive agricultural operations—to supercharge their efficiency and achieve unparalleled success!
                         </p>
                     </div>
@@ -321,11 +318,6 @@
                                 Bengaluru, Karnataka 560038,<br>
                                 India
                             </address>
-                            <!-- <div class="mt-6">
-                                <a href="" target="_blank" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                                    View on Map
-                                </a>
-                            </div> -->
                         </div>
                     </div>
                 </section>
@@ -336,12 +328,6 @@
             <footer class="bg-gray-900 bg-opacity-95 text-white py-8 mt-16 rounded-t-xl">
                 <div class="container mx-auto text-center px-4 sm:px-6 lg:px-8">
                     <p class="text-lg">© 2025 Kruthak Technology. All rights reserved.</p>
-                    <!-- <div class="flex justify-center space-x-6 mt-4">
-                        <!-- Social Media Icons (placeholders) 
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-2 16H8V8h2v8zm4 0h-2V8h2v8zm-1-8a1 1 0 100-2 1 1 0 000 2z"></path></svg></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-3 10a3 3 0 100 6 3 3 0 000-6zm6 0a3 3 0 100 6 3 3 0 000-6zm-3 8a5 5 0 110-10 5 5 0 010 10z"></path></svg></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-5 17h2V7H7v10zm6 0h2V7h-2v10z"></path></svg></a>
-                    </div> -->
                 </div>
             </footer>
         </div>
