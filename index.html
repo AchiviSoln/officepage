@@ -47,11 +47,12 @@
             z-index: 2; /* Ensures content is above the overlay */
         }
         /* Custom styles for headings and text colors */
+        /* Base font sizes adjusted for better mobile responsiveness */
         h1 {
             color: #FFFFFF; /* White for hero text */
             text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6); /* Stronger shadow for hero text */
             font-family: 'Bagel Fat One', cursive; /* Apply Bagel Fat One font */
-            font-size: 5rem; /* Default large size for h1 */
+            font-size: 3rem; /* Adjusted default for smallest screens */
             letter-spacing: 0.05em; /* Add slight letter spacing */
             text-transform: uppercase; /* Uppercase for professionalism */
         }
@@ -89,7 +90,7 @@
             white-space: nowrap; /* Prevent text from wrapping */
             overflow: hidden; /* Hide text that overflows during typing */
             border-right: .15em solid #FFD700; /* Blinking cursor, now a golden color */
-            font-size: 1.8rem; /* Slightly larger default font size */
+            font-size: 1.2rem; /* Adjusted default for smallest screens */
             font-family: 'Space Mono', monospace; /* Monospaced font for coding style */
             color: #FFD700; /* Golden color for typing effect */
             font-weight: 700; /* Bold for stronger presence */
@@ -135,27 +136,27 @@
 
         /* Adjust font sizes for responsiveness */
         .hero-text {
-            font-size: 1.5rem; /* Default font size for popping slogan */
+            font-size: 1rem; /* Adjusted default for smallest screens */
             color: #87CEEB; /* Sky blue for the slogan */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for text */
             font-family: 'Inter', sans-serif; /* Default Inter font for the slogan */
             font-weight: 600; /* Semi-bold for emphasis */
             font-style: normal; /* Ensure no italics if that's not desired */
         }
-        @media (min-width: 640px) { /* Small screens */
+        @media (min-width: 640px) { /* Small screens (sm) */
             h1 { font-size: 4rem; }
-            .animated-motto-text { font-size: 2rem; }
-            .hero-text { font-size: 1.8rem; }
+            .animated-motto-text { font-size: 1.8rem; }
+            .hero-text { font-size: 1.5rem; }
         }
-        @media (min-width: 768px) {
-            h1 { font-size: 6rem; } /* Larger for medium screens */
+        @media (min-width: 768px) { /* Medium screens (md) */
+            h1 { font-size: 6rem; }
             .animated-motto-text { font-size: 2.5rem; }
-            .hero-text { font-size: 2.2rem; } /* Larger for medium screens */
+            .hero-text { font-size: 2.2rem; }
         }
-        @media (min-width: 1024px) {
-            h1 { font-size: 8rem; } /* Even larger for large screens */
+        @media (min-width: 1024px) { /* Large screens (lg) */
+            h1 { font-size: 8rem; }
             .animated-motto-text { font-size: 3.5rem; }
-            .hero-text { font-size: 3rem; } /* Even larger for large screens */
+            .hero-text { font-size: 3rem; }
         }
     </style>
 </head>
